@@ -1,0 +1,47 @@
+{
+  "name": "mac-sftp-deploy",
+  "version": "0.0.1",
+  "bin": {
+    "sftp-deploy": "./dist/index.js"
+  },
+  "description": "A simple ts library for use as a template",
+  "homepage": "https://github.com/leighgordy/mac-sftp-deploy#readme",
+  "bugs": {
+    "url": "https://github.com/leighgordy/mac-sftp-deploy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leighgordy/mac-sftp-deploy.git"
+  },
+  "license": "MIT",
+  "author": "Leigh",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": true,
+  "scripts": {
+    "clean": "npx prettier . --write",
+    "validate": "tsc --noEmit",
+    "prebuild": "npx prettier . --check && tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "node --experimental-strip-types --experimental-test-module-mocks --test \"**/*.test.ts\"",
+    "coverage": "node --experimental-strip-types --experimental-test-module-mocks --test --experimental-test-coverage \"**/*.test.ts\"",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@types/ssh2-sftp-client": "^9.0.6",
+    "husky": "^9.1.7",
+    "prettier": "3.9.5",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "ssh2": "^1.17.0",
+    "ssh2-sftp-client": "^12.1.1"
+  },
+  "allowScripts": {
+    "ssh2@1.17.0": true,
+    "cpu-features@0.0.10": true,
+    "husky@9.1.7": true
+  }
+}
